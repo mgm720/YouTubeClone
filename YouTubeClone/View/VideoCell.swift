@@ -1,46 +1,13 @@
 //
-//  ViewController.swift
+//  VideoCell.swift
 //  YouTubeClone
 //
-//  Created by Michael Miles on 1/28/19.
+//  Created by Michael Miles on 2/2/19.
 //  Copyright © 2019 Michael Miles. All rights reserved.
 //
 
 import UIKit
 
-class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
-
-    override func viewDidLoad() {
-       
-        navigationItem.title = "Home"
-        
-        collectionView.backgroundColor = UIColor.white
-        
-        collectionView.register(VideoCell.self, forCellWithReuseIdentifier: "cellID")
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID", for: indexPath)
-        
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        //set height programatically...added and subtracted the bounds we already had in nsconstraint
-        let height = (view.frame.width - 16 - 16) * 9 / 16
-        return CGSize(width: view.frame.width, height: height + 16 + 68)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
-    }
-}
-
-//MARK: VideoCell Class
 class VideoCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -68,7 +35,7 @@ class VideoCell: UICollectionViewCell {
     let separatorView: UIView = {
         //to create a line, we created a thin view with a background color
         let view = UIView()
-        view.backgroundColor = UIColor.init(red: 230/255, green: 230/255, blue: 230/255, alpha: 1)
+        view.backgroundColor = UIColor.rgb(red: 230, green: 230, blue: 230)
         return view
     }()
     
@@ -111,7 +78,7 @@ class VideoCell: UICollectionViewCell {
         addConstraint(NSLayoutConstraint(item: titleLabel, attribute: .right, relatedBy: .equal, toItem: thumbnailImageView, attribute: .right, multiplier: 1, constant: 0))
         //height constraint
         addConstraint(NSLayoutConstraint(item: titleLabel, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 0, constant: 20))
-     
+        
         //top constraint
         addConstraint(NSLayoutConstraint(item: subtitleTextView, attribute: .top, relatedBy: .equal, toItem: titleLabel, attribute: .bottom, multiplier: 1, constant: 4))
         //left constraint
@@ -127,18 +94,3 @@ class VideoCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 }
-
-//created this to avoid repeating this code
-extension UIView {
-    func addConstraintsWithFormat(format: String, views: UIView...) {
-        var viewsDictionary = [String: UIView]()
-        for (index, view) in views.enumerated() {
-            let key = "v\(index)"
-            view.translatesAutoresizingMaskIntoConstraints = false
-            viewsDictionary[key] = view
-        }
-        
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: format, options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: viewsDictionary))
-    }
-}
-

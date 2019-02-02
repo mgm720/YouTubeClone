@@ -28,6 +28,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let layout = UICollectionViewFlowLayout()
         window?.rootViewController = UINavigationController(rootViewController: HomeController(collectionViewLayout: layout))
         
+        UINavigationBar.appearance().barTintColor = UIColor.red
+        
+        /*
+         this code will create a new view and add it to the top of the app. doesn't look as good on iphone XR so I removed it.
+        let statusBarBackgroundView = UIView()
+        statusBarBackgroundView.backgroundColor = UIColor.rgb(red: 200, green: 31, blue: 31)
+        
+        window?.addSubview(statusBarBackgroundView)
+        window?.addConstraintsWithFormat(format: "H:|[v0]|", views: statusBarBackgroundView)
+        window?.addConstraintsWithFormat(format: "V:|[v0(38)]", views: statusBarBackgroundView)
+        */
+        
         return true
     }
 
