@@ -8,24 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		5CF4B50322001DE200865654 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF4B50222001DE200865654 /* AppDelegate.swift */; };
-		5CF4B50522001DE200865654 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF4B50422001DE200865654 /* ViewController.swift */; };
+		5CF4B50522001DE200865654 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF4B50422001DE200865654 /* HomeController.swift */; };
 		5CF4B50822001DE200865654 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CF4B50622001DE200865654 /* Main.storyboard */; };
 		5CF4B50A22001DE700865654 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CF4B50922001DE700865654 /* Assets.xcassets */; };
 		5CF4B50D22001DE700865654 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CF4B50B22001DE700865654 /* LaunchScreen.storyboard */; };
 		5CF4B5352206615200865654 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF4B5342206615200865654 /* Extensions.swift */; };
 		5CF4B5382206625100865654 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF4B5372206625100865654 /* VideoCell.swift */; };
+		5CF4B53C2206659000865654 /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF4B53B2206659000865654 /* MenuBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5CF4B4FF22001DE200865654 /* YouTubeClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YouTubeClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CF4B50222001DE200865654 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5CF4B50422001DE200865654 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5CF4B50422001DE200865654 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		5CF4B50722001DE200865654 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5CF4B50922001DE700865654 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5CF4B50C22001DE700865654 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5CF4B50E22001DE700865654 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5CF4B5342206615200865654 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		5CF4B5372206625100865654 /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
+		5CF4B53B2206659000865654 /* MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				5CF4B5372206625100865654 /* VideoCell.swift */,
+				5CF4B53B2206659000865654 /* MenuBar.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -97,7 +100,7 @@
 		5CF4B53A2206634E00865654 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				5CF4B50422001DE200865654 /* ViewController.swift */,
+				5CF4B50422001DE200865654 /* HomeController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -173,10 +176,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5CF4B50522001DE200865654 /* ViewController.swift in Sources */,
+				5CF4B50522001DE200865654 /* HomeController.swift in Sources */,
 				5CF4B5382206625100865654 /* VideoCell.swift in Sources */,
 				5CF4B5352206615200865654 /* Extensions.swift in Sources */,
 				5CF4B50322001DE200865654 /* AppDelegate.swift in Sources */,
+				5CF4B53C2206659000865654 /* MenuBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

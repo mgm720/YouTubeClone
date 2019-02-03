@@ -30,6 +30,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UINavigationBar.appearance().barTintColor = UIColor.red
         
+        //these 2 lines of code make the shadow below the navBar disappear
+        UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+        
         /*
          this code will create a new view and add it to the top of the app. doesn't look as good on iphone XR so I removed it.
         let statusBarBackgroundView = UIView()
