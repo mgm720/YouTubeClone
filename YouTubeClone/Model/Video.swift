@@ -12,6 +12,10 @@ class Video : NSObject {
     
     var thumbnailImageName : String?
     var title : String?
+    var numberOfViews : NSNumber?
+    var uploadDate : NSDate?
+    
+    //video inherits a channel property
     var channel : Channel?
     
 }

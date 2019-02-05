@@ -19,11 +19,13 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         lowLifeVideo.title = "Future ft. The Weeknd - Low Life"
         lowLifeVideo.thumbnailImageName = "lowlifethumb"
         lowLifeVideo.channel = kanyeChannel
+        lowLifeVideo.numberOfViews = 150438574
         
         var stickTalkVideo = Video()
         stickTalkVideo.title = "Future - Stick Talk"
         stickTalkVideo.thumbnailImageName = "sticktalkthumb"
         stickTalkVideo.channel = kanyeChannel
+        stickTalkVideo.numberOfViews = 42589635
         
         return [lowLifeVideo, stickTalkVideo]
     }()
@@ -94,7 +96,7 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         //set height programatically...added and subtracted the bounds we already had in nsconstraint
         let height = (view.frame.width - 16 - 16) * 9 / 16
-        return CGSize(width: view.frame.width, height: height + 16 + 68)
+        return CGSize(width: view.frame.width, height: height + 16 + 80)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
