@@ -10,6 +10,25 @@ import UIKit
 
 class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
+    var videoArray : [Video] = {
+        var kanyeChannel = Channel()
+        kanyeChannel.name = "KanyeWest"
+        kanyeChannel.profileImageName = "kanye_profile"
+        
+        var lowLifeVideo = Video()
+        lowLifeVideo.title = "Future ft. The Weeknd - Low Life"
+        lowLifeVideo.thumbnailImageName = "lowlifethumb"
+        lowLifeVideo.channel = kanyeChannel
+        
+        var stickTalkVideo = Video()
+        stickTalkVideo.title = "Future - Stick Talk"
+        stickTalkVideo.thumbnailImageName = "sticktalkthumb"
+        stickTalkVideo.channel = kanyeChannel
+        
+        return [lowLifeVideo, stickTalkVideo]
+    }()
+    
+    //collectionView displaying the upper menu
     let menuBar = MenuBar()
 
     override func viewDidLoad() {
@@ -31,8 +50,29 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         collectionView.scrollIndicatorInsets = UIEdgeInsets(top: 50, left: 0, bottom: 0, right: 0)
         
         setupMenuBar()
+        setUpNavBarButtons()
     }
     
+    //creates bar button items in navbar
+    func setUpNavBarButtons() {
+        let searchImage = UIImage(named: "search_icon")?.withRenderingMode(.alwaysOriginal)
+        let searchBarButtonItem = UIBarButtonItem(image: searchImage, style: .plain, target: self, action: #selector(searchPressed))
+        
+        let moreImage = UIImage(named: "nav_more_icon")?.withRenderingMode(.alwaysOriginal)
+        let moreBarButtonItem = UIBarButtonItem(image: moreImage, style: .plain, target: self, action: #selector(morePressed))
+        
+        navigationItem.rightBarButtonItems = [moreBarButtonItem, searchBarButtonItem]
+    }
+    
+    @objc func searchPressed() {
+        print("Search button pressed")
+    }
+    
+    @objc func morePressed() {
+        print("More button pressed")
+    }
+    
+    //sets the constraints for the tabBar-type menu bar below NavBar
     private func setupMenuBar() {
         view.addSubview(menuBar)
         view.addConstraintsWithFormat(format: "H:|[v0]|", views: menuBar)
@@ -40,11 +80,13 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return videoArray.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID", for: indexPath) as! VideoCell
+        
+        cell.video = videoArray[indexPath.item]
         
         return cell
     }
